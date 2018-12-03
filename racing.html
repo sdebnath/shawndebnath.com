@@ -1,0 +1,37 @@
+---
+layout: default
+permalink: /racing/
+title: Racing
+menu-visible: true
+menu-title: racing
+menu-order: 4
+---
+
+<div id="home">
+	<p>
+		<div class="flash">
+			<em>
+				These are archived posts from back in the day when I converted an
+				E30 BMW 3-series to race in the ICSCC PRO3 racing series. Unfortunately,
+				after an ATV accident in 2009, I decided to switch hobbies and pursue
+				something different for a while.
+			</em>
+		</div>
+	</p>
+	<p>
+		<hr/>
+	</p>
+
+	<ul class="posts">
+		{% for post in site.categories.racing %}
+		<div class="post">
+			<li>
+				<b><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></b>
+				&nbsp;&nbsp;
+				<span>{{ post.date | date_to_string }}</span>
+			</li>
+			{{ post.content }}
+		</div>
+		{% endfor %}
+	</ul>
+</div>

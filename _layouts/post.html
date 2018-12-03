@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="post-header">
+	<div>
+		<h1>{{ page.title }}</h1>
+	</div>
+	<div>
+		<span class="meta">
+			{{ page.date | date_to_string }} &nbsp;&nbsp;<i class="fas fa-folder"></i>
+			{% for category in page.categories %}
+			{{category | downcase}}
+			{% unless forloop.last %}&nbsp;{% endunless %}
+			{% endfor %}
+		</span>
+	</div>
+</div>
+<div id="post">
+	{{ content }}
+</div>
+
+<div class="tags">
+	{% if page.tags.size > 0 %}<i class="fas fa-tags"></i> &nbsp;{% endif %}
+	{% for tag in page.tags %}
+		<span class="tag">{{tag | downcase}}</span>
+	{% endfor %}
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = "https://shawndebnath.com{{ page.url }}"; // <--- use canonical URL
+this.page.identifier = "{{ page.id }}";
+};
+
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://shawndebnath.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            

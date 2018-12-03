@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="author" content="Shawn Debnath">
+		<meta name="copyright"content="Shawn Debnath">
+		<meta name="owner"content="Shawn Debnath">
+		<title>{{ page.title }}</title>
+		<link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width">
+
+		<!-- syntax highlighting CSS -->
+		<link rel="stylesheet" href="/css/syntax.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="/css/main.css">
+
+		<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="site">
+				<div class="header clearfix">
+					<div class="header-title">
+						<div class="header-title-img">
+							<img class="img-circle profile-img" src="/assets/pimg0.jpeg">
+						</div>
+						<div class="header-title-text">
+							<span class="title"><a href="/">{{ site.name }}</a></span>
+						</div>
+					</div>
+					<div  class="header-nav">
+						{% assign sorted_pages = site.pages | sort:"menu-order" %}
+						{% for node in sorted_pages %}
+							{% if node.menu-visible == true %}
+								{% if page.url == node.url or page.categories contains node.menu-title %}
+									<a class="extra-current" href="{{ node.url }}">{{ node.menu-title | downcase }}</a>
+								{% else %}
+									<a class="extra" href="{{ node.url }}">{{ node.menu-title | downcase }}</a>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div> 
+				</div>
+
+				<div class="content">
+				{{ content }}
+				</div>
+
+				<div class="footer">
+					<div class="about">
+						<p>
+							<div>
+								&nbsp; &copy; {{ 'now' | date: "%Y" }}, Shawn Debnath. All rights reserved.
+								<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>
+								&nbsp;&nbsp;(<em><a href="/feed.xml">RSS</a></em>)
+								</span>
+							</div>
+						</p>
+					</div>
+					<div class="contact">
+						<p>
+						<div>
+							<span>
+								<a href="https://www.linkedin.com/in/shawndebnath">linkedin.com/in/shawndebnath</a>
+							</span>
+							<img src="/assets/linkedin_16.png"/><br />
+						</div>
+						<div>
+							<span>
+								<a href="https://github.com/sdebnath/">github.com/sdebnath</a> <a href="/github_commits.html"><i>(commits)</i></a>
+							</span>
+							<img src="/assets/github_16.png"/><br />
+						</div>
+						<div>
+							<span>
+								<a href="https://twitter.com/shawndebnath/">twitter.com/shawndebnath</a>
+							</span>
+							<img src="/assets/twitter_16.png"/><br />
+						</div>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /container -->
+
+	</body>
+</html>

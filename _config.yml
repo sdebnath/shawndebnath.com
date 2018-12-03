@@ -1,0 +1,8 @@
+name: Shawn Debnath
+description: Shawn Debnath's blog.
+url: https://www.shawndebnath.com
+enforce_ssl: www.shawndebnath.com
+highlighter: rouge
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed

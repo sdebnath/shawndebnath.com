@@ -1,0 +1,96 @@
+---
+layout: default
+title: Github Commits
+menu-visible: false
+menu-title:
+---
+
+<div id="github_commits">
+	Here are all my <strong>public</strong> github commits to date. 
+
+	<br/><br/>
+
+	<div id="commitResults" class="posts"></div>
+	<script language="JavaScript">
+
+function newCommitRow($set, entry){
+	// Extract what we need
+	var url = entry.html_url;
+	var sha = entry.sha.substr(0, 8);
+	var commit = entry.commit;
+	var msg = commit.message;
+	if (msg.length > 55) {
+		msg = msg.substr(0, 52) + "...";
+	}
+	var committer = commit.committer;
+	var commit_date = Date.parse(committer.date);
+
+	var $row = $('<li/>');
+	var $dateSpan = $('<span/>');
+	$dateSpan.text(commit_date);
+	var $shaSpan = $('<span/>');
+	$shaSpan.text(' ' + sha);
+	var $link = $('<a/>', {
+		href: url,
+		text: ' ' + msg
+	});
+	$row.append($dateSpan);
+	$row.append($shaSpan);
+	$row.append($link);
+	$set.append($row);
+}
+
+/*
+   'kato-im/ejwt',
+   'tel/snowflake',
+   'webmachine/webmachine',
+ */
+$(document).ready(function(){
+	var projects = [
+		'boundary/flake',
+		'dmitrid/neo4j-erlang',
+		'erlang/rebar3',
+		'erlware/relx',
+		'igniterealtime/openfire',
+		'jabberd2/jabberd2',
+		'openmach/openmach',
+		'plivo/plivo-dotnet',
+		'sdebnath/erlang_lpc',
+		'sdebnath/simpleworkflowframework.net',
+		'seth/pooler'
+	];
+
+	var $root = $('#commitResults');
+	for (var i = 0; i < projects.length; i++) {
+		 var repo = projects[i];
+		 $.ajax({
+		 url: 'http://api.github.com/repos/' + repo + '/commits',
+		 data: { author: 'sdebnath' },
+		 dataType : 'json',
+		 context:{repository:repo},
+		 success: function(entries) {
+		 var $hdr = $('<h1></h1>');
+		 $hdr.text(this.repository);
+		 $root.append($hdr);
+		 var $ul = $('<ul/>').addClass('posts');
+		 for(var j = 0; j < entries.length; j++) {
+		 var entry = entries[j];
+		 newCommitRow($ul, entry);
+		 $root.append($ul);
+		 }
+		 },
+
+		 error: function(xhr, status, errorThrown) {
+		 console.log('Problems encountered while processing ' + repo);
+		 console.log('Error: ' + errorThrown);
+		 console.log('Status: ' + status);
+		 console.dir(xhr);
+		 },
+		 complete: function(xhr, status) {
+		 }
+		 });
+		 }
+		 });
+
+	</script>
+</div>
