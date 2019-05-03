@@ -4,13 +4,18 @@
 /*
 /*****************************************************************************/
 
+
 /* Global Reset */
+
 * {
   margin: 0;
   padding: 0;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   background-color: #FFF;
@@ -19,7 +24,10 @@ body {
   text-align: center;
 }
 
-.youtube-player { display: block; margin: 0 auto; }
+.youtube-player {
+  display: block;
+  margin: 0 auto;
+}
 
 blockquote {
   margin-left: 25px;
@@ -43,22 +51,33 @@ span.date {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 24px;
   margin-bottom: 12px;
 }
 
 h1 {
-  font-size: 150%;
+  font-size: 120%;
 }
 
 h2 {
-  font-size: 130%;
+  font-size: 110%;
   color: #012773;
 }
 
+h2:after {
+  content: ' ';
+  display: block;
+  border: 1px solid #d0d0d0;
+}
+
 h3 {
-  font-size: 110%;
+  font-size: 100%;
   margin-bottom: 0;
 }
 
@@ -67,25 +86,42 @@ h4 h5 h6 {
   margin-bottom: 0;
 }
 
-h1 { margin-bottom: 1em; }
-/*p { margin: 1em 0; }*/
-p {margin: 0 0 1em 0;}
+h1 {
+  margin-bottom: 1em;
+}
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+
+/*p { margin: 1em 0; }*/
+
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:visited {
+  color: #a0a;
+}
 
 table {
   font-size: inherit;
   font: 100%;
 }
 
-@media screen and (max-device-width: 480px){
-  body { -webkit-text-size-adjust: 100%; }
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 .flash {
-  border: 1px solid rgba(27,31,35,.15);
+  border: 1px solid rgba(27, 31, 35, .15);
   background-color: #dbedff;
   color: #032f62;
   padding: 16px;
@@ -93,7 +129,7 @@ table {
 }
 
 .flash-warn {
-  border-color: rgba(27,31,35,.15);
+  border-color: rgba(27, 31, 35, .15);
   background-color: #fffbdd;
   color: #735c0f;
 }
@@ -104,7 +140,10 @@ table {
   color: #443233;
 }
 
+
 /*****************************************************************************/
+
+
 /*
 /* Home
 /*
@@ -129,7 +168,10 @@ ul.posts span {
   font-family: 'Inconsolata', sans-serif;
 }
 
+
 /*****************************************************************************/
+
+
 /*
 /* Site
 /*
@@ -141,20 +183,20 @@ ul.posts span {
 }
 
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .profile-img {
-    width: 50px;
-    height: 50px;
-    background: aqua;
-    border: 3px solid grayscale;
+  width: 50px;
+  height: 50px;
+  background: aqua;
+  border: 3px solid grayscale;
 }
 
 .site {
   font-size: 100%;
   text-align: left;
-  width: 42em;
+  width: 50em;
   padding: 10px;
   margin: 3em auto 3em;
   line-height: 1.5em;
@@ -197,20 +239,21 @@ ul.posts span {
 }
 
 .site .header .header-title {
-  float:left;
+  float: left;
   margin-right: 3em;
 }
 
 .site .header .header-title .header-title-img {
-  float:left;
+  float: left;
 }
+
 .site .header .header-title .header-title-text {
   margin: 10px 0 0 20px;
-  float:left;
+  float: left;
 }
 
 .site .header .header-nav {
-  float:right;
+  float: right;
   text-align: right;
   margin-right: 3em;
   margin-top: 10px;
@@ -230,6 +273,7 @@ ul.posts span {
 
 .site .meta {
   color: #777;
+  font-size: 90%;
 }
 
 .site .tags {
@@ -240,7 +284,7 @@ ul.posts span {
 .site .tags .tag {
   margin: 30px 0 30px 0;
   color: #333;
-  border: 1px solid rgba(27,31,35,.15);
+  border: 1px solid rgba(27, 31, 35, .15);
   background-color: #efefef;
   padding: 5px;
   font-size: 0.75em;
@@ -272,15 +316,15 @@ ul.posts span {
 
 .site .footer .contact a {
   color: #8085C1;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 .site .footer .contact img {
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 .site .footer .contact span {
-  margin-right: 0.5em; 
+  margin-right: 0.5em;
 }
 
 .site .footer .rss {
@@ -293,16 +337,22 @@ ul.posts span {
   border: 0;
 }
 
+
 /*****************************************************************************/
+
+
 /*
 /* Posts
 /*
 /*****************************************************************************/
 
+
 /* standard */
+
 .post {
   margin-bottom: 2.5em;
 }
+
 #post pre {
   border: 1px solid #ddd;
   background-color: #eef;
@@ -310,7 +360,8 @@ ul.posts span {
   overflow-x: auto;
 }
 
-#post ul, #post ol {
+#post ul,
+#post ol {
   margin-left: 1.35em;
 }
 
@@ -318,7 +369,6 @@ ul.posts span {
   border: 1px solid #ddd;
   background-color: #eef;
   font-size: 0.9em;
-
   line-height: 0.5;
   padding: 0;
   margin: 0;
@@ -328,7 +378,9 @@ ul.posts span {
   border: none;
 }
 
+
 /* terminal */
+
 #post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
@@ -351,4 +403,45 @@ ul.posts span {
 
 .post-header .meta .fas {
   color: #aaa;
+}
+
+#post table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.4em;
+  margin: 1.4em 0;
+  vertical-align: middle;
+}
+
+#post th {
+  font-weight: 600;
+  border-bottom: 3px solid #ddd;
+  padding-bottom: 0.5em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#post td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+#post img {
+  margin-top: 10px;
+}
+
+
+/* Image caption */
+
+#post img+em {
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-size: smaller;
+  font-style: italic;
 }
