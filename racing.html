@@ -22,16 +22,16 @@ menu-order: 4
 		<hr/>
 	</p>
 
-	<ul class="posts">
-		{% for post in site.categories.racing %}
-		<div class="post">
+	{% for post in site.categories.racing %}
+	<div class="post">
+		<ul class="posts">
 			<li>
 				<b><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></b>
 				&nbsp;&nbsp;
 				<span>{{ post.date | date_to_string }}</span>
 			</li>
-			{{ post.content }}
-		</div>
-		{% endfor %}
-	</ul>
+		</ul>
+		{{ post.content }}
+	</div>
+	{% endfor %}
 </div>
