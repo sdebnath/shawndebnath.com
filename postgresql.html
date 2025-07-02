@@ -2,13 +2,19 @@
 layout: default
 permalink: /postgresql/
 title: PostgreSQL
-menu-visible: false
+menu-visible: true
 menu-title: postgresql
 menu-order: 2
 ---
 
 <div id="home">
-    <p>A hands-on exploration into the internals of the PostgreSQL database engine.</p>
+	<p>
+		This section is a collection of articles about PostgreSQL internals, from how database
+		files are created during initdb to the mechanics of physical and logical replication.
+		It’s a hands-on exploration, part reference, part engineering journal, for anyone building
+		or working deeply with PostgreSQL and curious about how it actually works under the hood.
+	</p>
+	</p>
     <ul class="posts">
 		{% for post in site.categories.postgresql reversed %}
 		{% if post.group == nil %}

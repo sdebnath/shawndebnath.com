@@ -250,6 +250,7 @@ blockquote {
 .site .footer .about {
   flex: 1 1 auto;
   margin-right: 2em;
+  align-self: flex-start;
 }
 
 .site .footer .contact {
