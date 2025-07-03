@@ -14,8 +14,14 @@ menu-order: 2
 		It’s a hands-on exploration, part reference, part engineering journal, for anyone building
 		or working deeply with PostgreSQL and curious about how it actually works under the hood.
 	</p>
+	<p>
+		<div class="flash">
+			"If you want to master something, teach it. The more you teach, the better you learn. 
+			Teaching is a powerful tool to learning." - <em>Richard Feynman</em>
+		</div>
 	</p>
-    <ul class="posts">
+
+	<ul class="posts">
 		{% for post in site.categories.postgresql reversed %}
 		{% if post.group == nil %}
 		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
